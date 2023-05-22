@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from .models import Blog
 
 # Create your views here.
 def IndexView(request):
-    return render(request, 'index.html')
+    blogs = Blog.objects.all()
+
+    return render(request, 'index.html', {"blogs": blogs})
 
