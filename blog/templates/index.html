@@ -19,7 +19,13 @@
         </tr>
         {% for blog in blogs %}
         <tr>
-            <td>{{blog.judul}}</td>
+            <td>
+                <!-- <img src="{{blog.gambar.url}}" class="w-25" alt=""> <br/> -->
+                <!-- #Hapus Komentar kode diatas ini jika gambar muncul -->
+
+                <img src="{{blog.gambar_url}}" class="w-25" alt="foto"> <br/>
+                {{blog.judul}}
+            </td>
             <td>{{blog.kategori}}</td>
             <td>{{blog.tgl_publish}}</td>
             <td>{{blog.tgl_dibuat}}</td>
