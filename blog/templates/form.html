@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block 'content' %}    
+    <form action="#" method="post">
+        {% csrf_token %}
+        {% bootstrap_form forms %}
+        {% buttons %}
+            <button type="submit" class="btn btn-success">
+            Submit
+            </button>
+            <a href="{% url 'index' %}" class="btn btn-primary">Kembali</a>
+        {% endbuttons %}
+    </form>
+
+
+{% endblock %}

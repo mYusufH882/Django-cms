@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}
 
 {% block 'content' %}
 
     <h2 class="text-center">Daftar Blog</h2>
 
-    <a href="#" class="btn btn-primary my-2">Tambah Blog Baru</a>
+    <a href="{% url 'create' %}" class="btn btn-primary my-2">Tambah Blog Baru</a>
+
+    {% bootstrap_messages %}
 
     <table class="table table-bordered table-striped">
         <tr>
@@ -21,8 +24,8 @@
             <td>{{blog.tgl_publish}}</td>
             <td>{{blog.tgl_dibuat}}</td>
             <td>
-                <a href="#" class="btn btn-warning text-white">Edit</a>
-                <a href="#" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapusnya?')">Hapus</a>
+                <a href="{% url 'update' blog.id %}" class="btn btn-warning text-white">Edit</a>
+                <a href="{% url 'delete' blog.id %}" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapusnya?')">Hapus</a>
             </td>
         </tr>
         {% endfor %}
