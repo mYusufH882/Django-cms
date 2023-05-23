@@ -5,7 +5,7 @@ from django.conf import settings
 # Create your models here.
 class Blog(models.Model):
     judul = models.CharField(max_length=255)
-    gambar = models.ImageField(upload_to="foto/")
+    gambar = models.ImageField(upload_to="foto/", null=True)
     kategori = models.CharField(max_length=200)
     deskripsi = models.TextField()
     tgl_publish = models.DateField()
